@@ -104,3 +104,6 @@ venv.bak/
 .mypy_cache/
 
 secrets.py 
+
+tweeted_users.txt
+/assets

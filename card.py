@@ -1,6 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 # get an image
-base = Image.open('love/iu-1.png').convert('RGBA')
+base = Image.open('love/iu-4.png').convert('RGBA')
 
 # make blank image for the text
 txt = Image.new('RGBA', base.size, (255, 255, 255, 0))
