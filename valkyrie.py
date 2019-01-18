@@ -27,7 +27,7 @@ def get_tweet(api_, type_):
     """Get a list of tweets matching the search query."""
     query = choice(data[type_]['queries'])
     results = api_.search(q=query, count=50)
-    return results
+    return results 
 
 
 def get_users():
