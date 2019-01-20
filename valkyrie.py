@@ -3,9 +3,12 @@ from secrets import *
 from random import choice
 import os
 import re
+import card
 
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 tweeted_file = os.path.join(__location__, "tweeted_users.txt")
+
+greetings = ['Hello there', 'Hello', 'Greetings']
 
 data = {'like':
             {'queries': ['"nobody likes me"',
@@ -14,9 +17,12 @@ data = {'like':
                          '"no one loves me"',
                          '"i hate my life"',
                          '"i hate everything"'],
-             'responses': ['I like you.',
-                           'You got this.',
+             'responses': ['I like\nyou.',
+                           'You got\nhis.',
                            'You matter.',
+                           'Your support\nhas arrived.',
+                           'We all could\nuse a helping\nhand someitme.'
+                           'Taking care\nof you.'
                            u'\u2764']
             }
         }
