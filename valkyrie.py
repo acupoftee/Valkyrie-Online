@@ -17,8 +17,7 @@ data = {'like':
                          '"no one loves me"',
                          '"i hate my life"',
                          '"i hate everything"'],
-             'responses': ['I like\nyou.',
-                           'You got\nthis.',
+             'responses': ['You got\nthis.',
                            'You matter.',
                            'Your support\nhas arrived.',
                            'We all could\nuse a helping\nhand someitme.'
