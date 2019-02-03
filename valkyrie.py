@@ -40,8 +40,8 @@ def get_tweet(api_, type_):
 def get_users():
     """Get a list of users we've already tweeted at."""
     f = open(tweeted_file, 'r')
-    usrs = [line.rstrip('\n') for line in f]
-    return usrs
+    users = [line.rstrip('\n') for line in f]
+    return users
 
 
 def filter_tweets(tweets_, users_):
