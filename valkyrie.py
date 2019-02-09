@@ -1,14 +1,19 @@
 import tweepy
 from secrets import *
 from random import choice
+from card import *
 import os
 import re
-import card
 
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 tweeted_file = os.path.join(__location__, "tweeted_users.txt")
-
 greetings = ['Hello there', 'Hello', 'Greetings']
+# queries = ['"nobody likes me"',
+#                          '"nobody loves me"',
+#                          '"no one likes me"',
+#                          '"no one loves me"',
+#                          '"i hate my life"',
+#                          '"i hate everything"']
 
 data = {'like':
             {'queries': ['"nobody likes me"',
@@ -21,8 +26,7 @@ data = {'like':
                            'You matter.',
                            'Your support\nhas arrived.',
                            'We all could\nuse a helping\nhand someitme.'
-                           'Taking care\nof you.'
-                           u'\u2764']
+                           'Taking care\nof you.']
             }
         }
 
@@ -64,7 +68,15 @@ def send_reply(api_, type_, tweet_):
     f.write(tweet_.author.screen_name + '\n')
     f.close()
     text = '@' + tweet_.author.screen_name + ' ' + choice(data[type_]['responses'])
-    api_.update_status(text, in_reply_to_status_id=tweet_.id_str)
+    greeting = choice(greetings)
+    response = choice(data[type_]['responses'])
+    image_file = 'output/pic.png'
+    make_image(greeting, tweet_.author.name, response, image_file)
+    media_id = api_.media_upload(image_file)
+    media_ids = [media_id.media_id_string]
+    api_.update_status(text, in_reply_to_status_id=tweet_.id_str, media_ids=media_ids)
+    delete_image(image_file)
+
 
 
 if __name__ == "__main__":
@@ -73,7 +85,7 @@ if __name__ == "__main__":
     auth.set_access_token(A_TOKEN, A_TOKEN_SECRET)
     api = tweepy.API(auth)
 
-    tweet_type = choice(data.keys())
+    tweet_type = choice(list(data['like']['queries']))
 
     tweets = get_tweet(api, tweet_type)
     users = get_users()
