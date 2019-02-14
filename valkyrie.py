@@ -8,27 +8,20 @@ import re
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 tweeted_file = os.path.join(__location__, "tweeted_users.txt")
 greetings = ['Hello there', 'Hello', 'Greetings']
-# queries = ['"nobody likes me"',
-#                          '"nobody loves me"',
-#                          '"no one likes me"',
-#                          '"no one loves me"',
-#                          '"i hate my life"',
-#                          '"i hate everything"']
-
-data = {'like':
-            {'queries': ['"nobody likes me"',
+queries = ['"nobody likes me"',
                          '"nobody loves me"',
                          '"no one likes me"',
                          '"no one loves me"',
                          '"i hate my life"',
-                         '"i hate everything"'],
-             'responses': ['You got\nthis.',
-                           'You matter.',
+                         '"i hate everything"']
+
+responses = [ 'You\'re\nloved.',
+                'You\'re\nvalued.',
                            'Your support\nhas arrived.',
-                           'We all could\nuse a helping\nhand someitme.'
+                           'We all could\nuse a helping\nhand someitme.',
                            'Taking care\nof you.']
-            }
-        }
+
+
 
 filters = re.compile(
   """(http|#nowplaying|youtube|-|"|“|”|poor boy|the way you do|hear it every ?day|that\'?s ok'|loves me better|23)""",
@@ -36,7 +29,7 @@ filters = re.compile(
 
 def get_tweet(api_, type_):
     """Get a list of tweets matching the search query."""
-    query = choice(data[type_]['queries'])
+    query = choice(queries)
     results = api_.search(q=query, count=50)
     return results 
 
@@ -67,9 +60,9 @@ def send_reply(api_, type_, tweet_):
     f = open(tweeted_file, 'a')
     f.write(tweet_.author.screen_name + '\n')
     f.close()
-    text = '@' + tweet_.author.screen_name + ' ' + choice(data[type_]['responses'])
+    text = '@' + tweet_.author.screen_name + ' ' + choice(responses)
     greeting = choice(greetings)
-    response = choice(data[type_]['responses'])
+    response = choice(responses)
     image_file = 'output/pic.png'
     make_image(greeting, tweet_.author.name, response, image_file)
     media_id = api_.media_upload(image_file)
@@ -85,8 +78,7 @@ if __name__ == "__main__":
     auth.set_access_token(A_TOKEN, A_TOKEN_SECRET)
     api = tweepy.API(auth)
 
-    tweet_type = choice(list(data['like']['queries']))
-
+    tweet_type = choice(queries)
     tweets = get_tweet(api, tweet_type)
     users = get_users()
     tweet = filter_tweets(tweets, users)
