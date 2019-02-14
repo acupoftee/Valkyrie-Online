@@ -5,10 +5,11 @@
 
 ## Mercy themed Twitter bot sharing kind tweets and Overwatch themed cards for those who need them.
 
-***
-# Technologies 
+Technologies 
 ---
 * Python 3.7
 * Tweepy
 * Pillow 
-* Adobe Photoshop
+
+---
+All photos courtesy of [@PlayOverwatch](https://twitter.com/PlayOverwatch)
