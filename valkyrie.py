@@ -17,7 +17,7 @@ queries = ['"nobody likes me"',
 responses = [ 'You\'re\nloved.',
                 'You\'re\nvalued.',
                            'Your support\nhas arrived.',
-                           'We all could\nuse a helping\nhand someitme.',
+                           'I like\n you',
                            'Taking care\nof you.']
 
 
@@ -63,7 +63,7 @@ def send_reply(api_, type_, tweet_):
     greeting = choice(greetings)
     response = choice(responses)
     image_file = 'output/pic.png'
-    make_image(greeting, tweet_.author.name, response, image_file)
+    make_image(greeting, tweet_.author.screen_name, response, image_file)
     media_id = api_.media_upload(image_file)
     media_ids = [media_id.media_id_string]
     api_.update_status(text, in_reply_to_status_id=tweet_.id_str, media_ids=media_ids)
