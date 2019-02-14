@@ -1,7 +1,7 @@
 import tweepy
 from secrets import *
 from random import choice
-from card import *
+from card import make_image, delete_image
 import os
 import re
 
