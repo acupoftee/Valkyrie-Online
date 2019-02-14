@@ -3,7 +3,9 @@
     <img src = "https://github.com/acupoftee/Valkyrie-Online/blob/master/img/g-gif-update-4.php.gif">
     </p>
 
-## Mercy themed Twitter bot sharing kind tweets and Overwatch themed cards for those who need them.
+A [Mercy](https://playoverwatch.com/en-us/heroes/mercy/) inspred Twitter bot sharing kind tweets and Overwatch themed cards for those who need them.
+
+Now live at [@ValkBotOnline](https://twitter.com/ValkBotOnline)!
 
 Technologies 
 ---
@@ -11,5 +13,4 @@ Technologies
 * Tweepy
 * Pillow 
 
----
 All photos courtesy of [@PlayOverwatch](https://twitter.com/PlayOverwatch)
