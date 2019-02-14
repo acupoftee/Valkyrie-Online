@@ -17,7 +17,8 @@ queries = ['"nobody likes me"',
 responses = [ 'You\'re\nloved.',
                 'You\'re\nvalued.',
                            'Your support\nhas arrived.',
-                           'I like\n you',
+                           'I like\nyou',
+                           'Right beside\nyou',
                            'Taking care\nof you.']
 
 
