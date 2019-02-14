@@ -13,4 +13,4 @@ Technologies
 * Tweepy
 * Pillow 
 
-All photos courtesy of [@PlayOverwatch](https://twitter.com/PlayOverwatch)
+All assets courtesy of [@PlayOverwatch](https://twitter.com/PlayOverwatch)
