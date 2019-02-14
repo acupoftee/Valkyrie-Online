@@ -14,7 +14,6 @@ queries = ['"nobody likes me"',
                          '"no one loves me"',
                          '"i hate my life"',
                          '"i hate everything"']
-
 responses = [ 'You\'re\nloved.',
                 'You\'re\nvalued.',
                            'Your support\nhas arrived.',
@@ -60,7 +59,7 @@ def send_reply(api_, type_, tweet_):
     f = open(tweeted_file, 'a')
     f.write(tweet_.author.screen_name + '\n')
     f.close()
-    text = '@' + tweet_.author.screen_name + ' ' + choice(responses)
+    text = '@' + tweet_.author.screen_name + ' ' + choice(responses).replace('\n', ' ') + u'\u2764'
     greeting = choice(greetings)
     response = choice(responses)
     image_file = 'output/pic.png'
