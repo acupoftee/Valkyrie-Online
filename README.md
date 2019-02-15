@@ -13,4 +13,4 @@ Technologies
 * Tweepy
 * Pillow 
 
-All assets courtesy of [@PlayOverwatch](https://twitter.com/PlayOverwatch)
+All assets courtesy of [@PlayOverwatch](https://twitter.com/PlayOverwatch). Valkyrie Online isn’t endorsed or in any way affiliated with Blizzard Entertainment and doesn’t reflect the views or opinions of Blizzard Entertainment or anyone officially involved in producing or managing Overwatch. Overwatch and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries. All submitted art content remains copyright of its original copyright holder.

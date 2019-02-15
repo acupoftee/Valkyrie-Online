@@ -4,6 +4,7 @@ from random import choice
 from card import make_image, delete_image
 import os
 import re
+import time 
 
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 tweeted_file = os.path.join(__location__, "tweeted_users.txt")
@@ -80,8 +81,10 @@ if __name__ == "__main__":
     auth.set_access_token(A_TOKEN, A_TOKEN_SECRET)
     api = tweepy.API(auth)
 
-    tweet_type = choice(queries)
-    tweets = get_tweet(api, tweet_type)
-    users = get_users()
-    tweet = filter_tweets(tweets, users)
-    send_reply(api, tweet_type, tweet)
+    while True:
+      tweet_type = choice(queries)
+      tweets = get_tweet(api, tweet_type)
+      users = get_users()
+      tweet = filter_tweets(tweets, users)
+      send_reply(api, tweet_type, tweet)
+      time.sleep(10800)
