@@ -103,10 +103,10 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-secrets.py 
-tweeted_users.txt
-/output
-.vscode/
-assets/
-fonts/
+# secrets.py 
+# tweeted_users.txt
+# /output
+# .vscode/
+# assets/
+# fonts/
 .DS_Store
