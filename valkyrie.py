@@ -63,8 +63,7 @@ def send_reply(api_, type_, tweet_):
     f.write(tweet_.author.screen_name + '\n')
     f.close()
     response = choice(responses)
-    #text = '@' + tweet_.author.screen_name + ' ' + choice(responses).replace('\n', ' ') + u'\u2764'
-    text = '@' + tweet_.author.screen_name + response + " " + u'\u2764'
+    text = '@' + tweet_.author.screen_name + ' ' + choice(responses).replace('\n', ' ') + u'\u2764'
     greeting = choice(greetings)
     image_file = 'output/pic.png'
     make_image(greeting, tweet_.author.screen_name, response, image_file)
