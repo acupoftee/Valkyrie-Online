@@ -63,7 +63,7 @@ def send_reply(api_, type_, tweet_):
     f.write(tweet_.author.screen_name + '\n')
     f.close()
     response = choice(responses)
-    text = '@' + tweet_.author.screen_name + ' ' + choice(responses).replace('\n', ' ') + u'\u2764'
+    text = '@' + tweet_.author.screen_name + ' ' + response.replace('\n', ' ') + u'\u2764'
     greeting = choice(greetings)
     image_file = 'output/pic.png'
     make_image(greeting, tweet_.author.screen_name, response, image_file)
@@ -76,11 +76,10 @@ def send_reply(api_, type_, tweet_):
 
 if __name__ == "__main__":
     """Find a tweet and reply to it."""
-    auth = tweepy.OAuthHandler(C_KEY, C_SECRET)
-    auth.set_access_token(A_TOKEN, A_TOKEN_SECRET)
-    api = tweepy.API(auth)
-
     while True:
+      auth = tweepy.OAuthHandler(C_KEY, C_SECRET)
+      auth.set_access_token(A_TOKEN, A_TOKEN_SECRET)
+      api = tweepy.API(auth)
       tweet_type = choice(queries)
       tweets = get_tweet(api, tweet_type)
       users = get_users()
