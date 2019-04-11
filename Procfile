@@ -1,1 +1,1 @@
-web: python3 valkyrie.py
+worker: python3 valkyrie.py
